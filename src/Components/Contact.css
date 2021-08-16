@@ -1,0 +1,99 @@
+.contact{
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 150px;
+    left: 61px;
+}
+.contact__header  {
+    position: relative;
+    left: 163px;
+    letter-spacing: 1px;
+}
+.Container{
+    width: 34rem;
+    margin-left: 45px;
+    position: relative;
+    top: 0px;
+
+}
+.Form{
+
+}
+.input__grp{
+
+}
+.input__grp>label{
+    margin-left: 11px;
+    color: gray;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.inputText{
+    padding: 6px;
+}
+.inputText>input{
+    height: 27px;
+    width: 172px;
+    background: #d3d3d340;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 4px;
+
+}
+.pfu{
+    margin-left: 71px;
+    width: 26rem;
+}
+.pfu>input{
+    width: 100%;
+}
+.pfu__text{
+    position: relative;
+    left: 52px;
+}
+.grp1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 18px;
+    margin-bottom: 12px;
+}
+.pfu__input{
+    height: 27px;
+    width: 476px;
+    background: #d3d3d340;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 4px;
+    position: relative;
+    right: 15px;
+}
+.nextButton{
+    position: relative;
+    left: 145px;
+    height: 36px;
+    width: 16rem;
+    background-color: #2b4cc27a;
+    color: white;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    font-size: large;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+    box-shadow: 2px 2px grey;
+    border: none;
+}
+.contact__section{
+    display: flex;
+}
+.view_section{
+    margin-left: 164px;
+    width: 38rem;
+    /* height: 38rem; */
+}
+.card2{
+    height: 32rem;
+}

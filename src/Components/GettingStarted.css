@@ -1,0 +1,55 @@
+.upperPart{
+    position: relative;
+    top: 77px;
+    
+}
+.upperPart >h1{
+    letter-spacing: 1px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: darkslategray;
+    text-shadow: 0px 1.9px grey;
+}
+.upperPart>h3{
+    letter-spacing: 1px;
+    margin-top: 19px;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #0d1010;
+    
+}
+.lowerPart{
+    height: 30rem;
+    display: flex;
+    position: absolute;
+    top: 234px;
+    margin-top: 7px;
+}
+.template{
+    height: 23rem;
+    margin: 0px 25px;
+    padding: 5px;
+    border-radius: 17px;
+    /* border: 1px solid black; */
+    box-shadow: 2px 2px 5px 2px grey;
+}
+.template__img{
+    height: 100%;
+}
+.template__button{
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    padding: 5px;
+    top: -205px;
+    left: 74px;
+    cursor: pointer;
+    background: #007effe6;
+    color: white;
+    font-weight: 500;
+    height: 38px;
+    border-radius: 4px;
+    border: 1px solid black;
+}

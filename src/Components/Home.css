@@ -1,0 +1,6 @@
+.home{
+    display: grid;
+    place-items: center;
+    position: relative;
+    top: 47px;
+}

@@ -1,0 +1,16 @@
+.about__us{
+    display: flex;
+    flex-grow: initial;
+    justify-content: center;
+}
+.left__part{
+    margin-left: 61px;
+    top: 136px;
+    position: relative;
+}
+.right__part{
+margin-right: 35px;
+}
+.aboutUs__image{
+ height: 28rem;
+}
