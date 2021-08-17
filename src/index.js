@@ -23,7 +23,7 @@ const reduxStore=createStore(rootReducer,
 
 ReactDOM.render(
  <Provider store={reduxStore}>
-   <BrowserRouter>
+  
    <ReactReduxFirebaseProvider
    firebase={firebase}
    config={firebaseApp}
@@ -32,7 +32,7 @@ ReactDOM.render(
    >
    <App />
    </ReactReduxFirebaseProvider>
-   </BrowserRouter>
+   
  </Provider>,
    document.getElementById('root')
   

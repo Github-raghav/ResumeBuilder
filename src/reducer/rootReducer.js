@@ -4,6 +4,7 @@ import documentReducer from "../reducer/documentReducer";
 import educationReducer from "./educationReducer";
 import initialState from "../reducer/intialState.json"
 import  * as actionTypes  from "../action/actionTypes";
+import authReducer from "./authReducer";
 import { firebaseReducer, firestoreReducer } from "react-redux-firebase";
 
 // const rootReducer =combineReducer({
@@ -20,7 +21,8 @@ const appReducer = combineReducers({
     firebase:firebaseReducer,
     contactSection:contactReducer,
     educationSection:educationReducer,
-    document:documentReducer
+    document:documentReducer,
+    auth:authReducer
   })
   const rootReducer = (state=initialState, action) => {
     if (action.type === actionTypes.SIGN_OUT) {

@@ -8,7 +8,12 @@ function Header() {
     const  openAboutUs=()=>{
         history.push("/aboutUs")
     }
-   
+    const  openRegister=()=>{
+        history.push("/register")
+    }
+    const  openLogIn=()=>{
+        history.push("/login")
+    }
 
     return (
         <div className=" header">
@@ -27,10 +32,10 @@ function Header() {
                 <li className="header_li "onClick={openAboutUs} >
                 About Us
                 </li>
-                <li className="header_li" >
+                <li className="header_li" onClick={openRegister}>
                 Register
                 </li>
-                <li className="header_li">
+                <li className="header_li" onClick={openLogIn}>
                 Sign In
                 </li>
                 

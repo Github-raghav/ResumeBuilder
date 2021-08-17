@@ -1,0 +1,88 @@
+.login{
+    display: grid;
+    place-content: center;
+    place-items: center;
+
+}
+.section{
+    width: 32rem;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin-top: 82px;
+}
+.container{
+height: 28rem;
+}
+.container>h1{
+    position: relative;
+    top: 41px;
+}
+.email{
+    margin-top: 11px;
+    height: 40px;
+    top: 69px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.email>label{
+    font-weight: 600;
+    margin-right: 24px;
+    font-size: 27px;
+}
+.email>input{
+    height: 27px;
+    width: 172px;
+    background: #d3d3d340;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 4px;
+}
+.password{
+    margin-top: 11px;
+    position: relative;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 31px;
+    top: 56px;
+}
+.password>input{
+    height: 27px;
+    width: 172px;
+    background: #d3d3d340;
+    border: 1px solid gray;
+    border-radius: 6px;
+    padding: 4px;
+}
+.password>label{
+    font-weight: 600;
+    margin-right: 24px;
+    font-size: 27px;
+}
+.button{
+    position: relative;
+    /* left: 1px; */
+    top: 75px;
+    height: 36px;
+    width: 14rem;
+    background-color: #2b4cc27a;
+    color: white;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    font-size: large;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 18px;
+    box-shadow: 2px 2px grey;
+    border: none;
+}
+.buttons{
+    display:flex ;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
