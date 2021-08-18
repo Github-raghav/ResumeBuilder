@@ -5,14 +5,23 @@ import App from './App';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore,applyMiddleware } from 'redux';
 import thunk from "redux-thunk";
-import { reduxFirestore,getFirestore, createFirestoreInstance } from 'redux-firestore';
-import { ReactReduxFirebaseProvider,getFirebase } from 'react-redux-firebase';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
 import rootReducer from "./reducer/rootReducer";
-import { firebaseApp, firebaseDb } from './firebase/firebaseConfig';
 import firebase from 'firebase';
+// redux firestore library-->database add
+import { reduxFirestore,getFirestore, createFirestoreInstance } from 'redux-firestore';
+// redux firebase-->auth functionality
+import { ReactReduxFirebaseProvider,getFirebase } from 'react-redux-firebase';
 
+var firebaseConfig={
+  apiKey: "AIzaSyAgoLSmXyho1wUd6aMxCCeYwB1c7gSxxG4",
+    authDomain: "resume-builder-57106.firebaseapp.com",
+    projectId: "resume-builder-57106",
+    storageBucket: "resume-builder-57106.appspot.com",
+    messagingSenderId: "596360244703",
+    appId: "1:596360244703:web:42d1ee1eca8f8b7ce5a86a"
+}
+firebase.initializeApp(firebaseConfig);
 firebase.firestore();
 const reduxStore=createStore(rootReducer,
    composeWithDevTools(
@@ -26,9 +35,12 @@ ReactDOM.render(
   
    <ReactReduxFirebaseProvider
    firebase={firebase}
-   config={firebaseApp}
+   config={firebaseConfig}
+  //  to change in redux storage
    dispatch={reduxStore.dispatch}
-   createFirestoreInstance={createFirestoreInstance}
+  //  firestore
+  //  createFirestoreInstance={createFirestoreInstance}
+  createFirestoreInstance={createFirestoreInstance}
    >
    <App />
    </ReactReduxFirebaseProvider>

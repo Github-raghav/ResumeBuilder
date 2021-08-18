@@ -6,7 +6,8 @@ import update from "immutability-helper";
 
 export default function authReducer(state=initialState.auth,action){
     switch(action.type){
-        case actionTypes.SIGN_IN_FAILED:return update(state,{loading:{$set:false},ErrorMessage:{$set:''}})
+        case actionTypes.SIGN_IN_FAILED:
+            return update(state,{loading:{$set:false},ErrorMessage:{$set:action.error}})
         case actionTypes.SIGN_IN_REQUEST:
             return  update(state,{loading:{$set:true}}) 
         case actionTypes.SIGN_IN_SUCCESS:

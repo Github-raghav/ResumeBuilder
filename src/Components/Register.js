@@ -1,7 +1,9 @@
+import { Card } from '@material-ui/core';
 import React, { useState,useEffect } from 'react'
 import { connect} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as authActions from "../action/authActions"
+import "./Register.css";
 
 function Register(props) {
     const history=useHistory();
@@ -25,28 +27,31 @@ function Register(props) {
     const onsubmit=()=>{
         props.register({email:email,password:password})
     }
+    console.log(props.authMine?.ErrorMessage?.message );
     return (
         <div className="register">
-            <h1> this is register</h1>
             <div className="section">
-                <div>
+                <Card className="container">
+            <h1> Register Details</h1>
+
+                <div className="email">
                     <label>Email</label>
                     <input type="text" name="email" value={email} onChange={handleEmail} />
                 </div>
 
-                <div>
+                <div className="password">
                     <label>Password</label>
                     <input type="text" name="password" value={password} onChange={handlePassword} />
                 </div>
+            <div className="error">
+                {props.authMine?.ErrorMessage?.message? 
+                <span> {props.authMine?.ErrorMessage?.message}</span>:<></>
+                }
             </div>
-            <div>
-                <span className="error-message">
-                    {props.authMine?.ErrorMessage?.message}
-                </span>
-            </div>
-
             <div className="buttons">
-                <button onClick={onsubmit} type="button">Register</button>
+                <button className="button" onClick={onsubmit} type="button">Register</button>
+            </div>
+                </Card>
             </div>
             
         </div>

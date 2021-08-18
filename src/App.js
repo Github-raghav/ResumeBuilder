@@ -1,6 +1,6 @@
 import './App.css';
 import React,{useEffect} from 'react';
-import { firebaseDb } from './firebase/firebaseConfig';
+// import { firebaseDb } from './firebase/firebaseConfig';
 import Header from "./Components/Header"
 import {
   BrowserRouter as Router,
@@ -22,13 +22,13 @@ import LogIn from './Components/LogIn';
 
 function App() {
 
-  useEffect(() => {
-    firebaseDb.collection("resumes").get().then(alldocs=>{
-      alldocs.forEach(doc =>{
-        console.log(doc.data());
-      })
-    })
-  }, [])
+  // useEffect(() => {
+  //   firebaseDb.collection("resumes").get().then(alldocs=>{
+  //     alldocs.forEach(doc =>{
+  //       console.log(doc.data());
+  //     })
+  //   })
+  // }, [])
   return (
     <div className="App">
       {/* <h1>app</h1> */}
@@ -38,7 +38,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/aboutus"exact component={AboutUs} />
           <Route path="/gettingStarted" exact component={GettingStarted}/>
-          <Route path="/contact" exact component={Contact} />
+          <PrivateRoute path="/contact" exact component={Contact} />
           <PrivateRoute path="/education" exact component={Education}/>
           <PrivateRoute path="/final" exact component={Final}/>
           <Route path="/register" exact component={Register}/>

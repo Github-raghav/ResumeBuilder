@@ -1,4 +1,4 @@
-.login{
+.register{
     display: grid;
     place-content: center;
     place-items: center;
@@ -17,11 +17,12 @@ height: 28rem;
 .container>h1{
     position: relative;
     top: 41px;
+    text-align: center;
 }
 .email{
-    margin-top: 11px;
     height: 40px;
-    top: 69px;
+    top: 32px;
+    right: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,14 +42,13 @@ height: 28rem;
     padding: 4px;
 }
 .password{
-    margin-top: 11px;
-    position: relative;
-    height: 64px;
+    height: 40px;
+    top: 32px;
+    right: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
-    right: 31px;
-    top: 56px;
+    position: relative;
 }
 .password>input{
     height: 27px;
@@ -65,8 +65,6 @@ height: 28rem;
 }
 .button{
     position: relative;
-    /* left: 1px; */
-    top: 75px;
     height: 36px;
     width: 14rem;
     background-color: #2b4cc27a;
@@ -81,12 +79,15 @@ height: 28rem;
     border: none;
 }
 .buttons{
-    display:flex ;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    top: 72px;
+
 }
-.error__message{
+.error{
     position: relative;
     top: 54px;
 }

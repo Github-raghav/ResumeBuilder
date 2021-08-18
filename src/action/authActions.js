@@ -1,11 +1,17 @@
-import { getFirebase } from "react-redux-firebase";
+
 import *  as actionTypes from "./actionTypes";
 
 export const signInRequest=()=>{
     return {type:actionTypes.SIGN_IN_REQUEST}
 }
-export const signInFailed=()=>{
-    return {type:actionTypes.SIGN_IN_FAILED}
+export const signInSuccess=(users)=>{
+    return {
+        type: actionTypes.SIGN_IN_SUCCESS,
+        
+    }
+}
+export const signInFailed=(error)=>{
+    return {type:actionTypes.SIGN_IN_FAILED,payload:error}
 }
 export const registerRequest=()=>{
     return{type:actionTypes.REGISTER_REQUEST}
@@ -13,23 +19,26 @@ export const registerRequest=()=>{
 export const registerSuccess=()=>{
     return{type:actionTypes.REGISTER_SUCCESS}
 }
-export const registerFailed=()=>{
-    return {type:actionTypes.REGISTER_FAILED}
+export const registerFailed=(error)=>{
+    return {type:actionTypes.REGISTER_FAILED,
+            payload:error   
+    }
 }
-export const signIN=(userData)=>{
+export const signIn=(userData)=>{
     return async(dispatch,getState,{getFirebase,getFireStore})=>{
         dispatch({type:actionTypes.SIGN_IN_REQUEST})
-        const firebase=getFirebase;
+        const firebase=getFirebase();
         try{
             console.log(userData);
-            let data=await firebase.auth().signInWithEmailAndPassword(userData.Email,userData.Password)
+            let data=await firebase.auth().signInWithEmailAndPassword(userData.email,userData.password)
             console.log(data.user.uid);
             dispatch({type:actionTypes.SIGN_IN_SUCCESS})
         }catch(err){
+            console.log(err);
             dispatch({type:actionTypes.SIGN_IN_FAILED,error:err})
             setTimeout(()=>{
                 dispatch({type:actionTypes.REMOVE_ERROR})
-            },2000)
+            },20000)
         }
     }
 }
@@ -61,10 +70,11 @@ export const register=(userData)=>{
               });
               dispatch({type: actionTypes.REGISTER_SUCCESS})
         }).catch((err) => {
+            console.log(err);
             dispatch({type: actionTypes.REGISTER_FAILED,error:err})
             setTimeout(()=>{
                 dispatch({type:actionTypes.REMOVE_ERROR})
-            },2000)
+            },20000)
         });
     }
 } 
