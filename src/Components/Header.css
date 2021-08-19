@@ -21,7 +21,7 @@
     font-weight: lighter;
     letter-spacing: 1px;
     size: letter;
-    margin-right: 66px;
+    margin-right: 1px;
     list-style: none;
 }
 .header_li{
@@ -29,4 +29,19 @@
     cursor: pointer;
     color: gray;
 
+}
+.header_right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navLinks{
+    text-decoration: none;
+    margin: 5px 13px;
+    cursor: pointer;
+    color: gray; 
+}
+.navLink{
+    text-decoration: none;
+    font-weight: bolder;
 }

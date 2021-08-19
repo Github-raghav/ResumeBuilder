@@ -7,14 +7,16 @@ import * as authActions from "../action/authActions";
 import {isLoaded,isEmpty} from "react-redux-firebase"
 function LoggesOut(props){
  return(
-     <ul>
-         <li>
-            <NavLink to="/register">Register</NavLink> 
+     <>
+     <ul className="header__links">
+         <li className="header__li">
+            <NavLink to="/register" className="navLinks">Register</NavLink> 
          </li>
-         <li>
-             <NavLink to="/login">Sign In</NavLink>
+         <li className="li">
+             <NavLink to="/login" className="navLinks">LogIn</NavLink>
          </li>
      </ul>
+     </>
  )
 }
 
@@ -42,11 +44,10 @@ function Header(props) {
           <div className="logo">
               <img src="/images/logo.png" layout="fill" objectfit="contain" className="image"
               />
-              {/* <Logo/> */}
           </div>
             {/* right */}
-            {/* uncomment it later */}
-            {/* <ul>
+            <div className="header_right">
+            <ul className="header__links">
             <li className="header_li">
                 Resume Templates
                 </li>
@@ -54,13 +55,13 @@ function Header(props) {
                 <li className="header_li "onClick={openAboutUs} >
                 About Us
                 </li>
-            </ul> */}
-            { isLoaded(auth) && !isEmpty(auth)? <>
-            
+            </ul>
+            { isLoaded(auth) && !isEmpty(auth)? 
+            <>
             <ul className="header__links">
                 
                 <li className="header_li" >
-                    <NavLink to="/">
+                    <NavLink className="navLink" to="/">
                         Logged in as {auth.email}
                     </NavLink>
                 </li>
@@ -72,6 +73,7 @@ function Header(props) {
                 </ul>
                 </>:<LoggesOut/>
             }
+            </div>
     
         </div>
     )
