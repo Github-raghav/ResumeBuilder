@@ -58,11 +58,14 @@ function LogIn(props) {
                             <input type="password" name="password" value={password} onChange={handlePassowrd}/>
                         </div>
                        <div className="error__message">
-                        
+                        {console.log(props.authMine.ErrorMessage.message)};
                         {props.authMine?.ErrorMessage?.message?
+    
                       <div>{props.authMine?.ErrorMessage?.message}</div>:<></>    
+                    
                     }
                        </div>
+                         
                         <div className="buttons">
     
                             <button className="button" type="button" onClick={onSubmit} >Login</button>

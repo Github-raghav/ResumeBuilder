@@ -1,0 +1,43 @@
+.card{
+width: 40rem;
+display: grid;
+left: 40rem;
+top: 3rem;
+}
+.finalize-settings{
+    display: inline-block;
+}
+.download-resume{
+    display: inline-block;
+    margin-left: 220px;
+    margin-top: 32px;
+}
+.finalize{
+    
+}
+.funnel-section{
+    display: inline-block;
+    position: relative;
+    left: 29rem;
+    top: 6rem;
+}
+.buttonss{
+    display: inline;
+    background-color: #2b4cc27a;
+    color: white;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    font-size: large;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 18px;
+    box-shadow: 2px 2px grey;
+    border: none;
+}
+@media (max-width:1000px){
+    .funnel-section{
+      left: 5rem;
+    }
+}
+
+

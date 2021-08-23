@@ -10,6 +10,7 @@ function Register(props) {
     console.log(props);
     const[email,setEmail]=useState('');
     const[password,setPassword]=useState("");
+    const[err,setErr]=useState(props.authMine.ErrorMessage.message);
 
     const handleEmail= (e)=>{
         setEmail(e.target.value);
@@ -21,6 +22,10 @@ function Register(props) {
           console.log(props.auth);
           if(props.auth?.uid){
             history.push('/')
+          }
+
+          if(err){
+        <div>{err}</div>
           }
         }, [props])
 
@@ -41,7 +46,7 @@ function Register(props) {
 
                 <div className="password">
                     <label>Password</label>
-                    <input type="text" name="password" value={password} onChange={handlePassword} />
+                    <input type="password" name="password" value={password} onChange={handlePassword} />
                 </div>
             <div className="error">
                 {props.authMine?.ErrorMessage?.message? 
@@ -60,7 +65,7 @@ function Register(props) {
 const mapStateToProps=(state)=>{
      return{
          auth:state.firebase.auth,
-         authMine:state.Register
+         authMine:state.auth
      }
 }
 const mapDispatchToProps=(dispatch)=>{

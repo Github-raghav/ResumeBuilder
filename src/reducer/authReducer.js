@@ -1,7 +1,5 @@
 import initialState from "./intialState.json";
-import * as actionActions from "../action/authActions"
 import { actionTypes } from "react-redux-firebase";
-// import update from 'immutability-helper';
 import update from "immutability-helper";
 
 export default function authReducer(state=initialState.auth,action){

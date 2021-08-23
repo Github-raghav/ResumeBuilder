@@ -7,7 +7,7 @@ import {useFirestore} from "react-redux-firebase";
 import { Card } from "@material-ui/core";
 import  jsPDF  from "jspdf";
 import html2canvas from 'html2canvas';
-
+  import "./Final.css"
 
 
    function Finalize(props) {
@@ -23,12 +23,13 @@ import html2canvas from 'html2canvas';
       console.log(user);
       let newObj =null;
       if(user.resumeIds!=undefined)
-       newObj = {...user.resumeIds,[documentId.id]:{educationSection:educationSection,contactSection:contactSection,document:documentId}}
-       else
-       newObj={[document.id]:{educationSection:educationSection,contactSection:contactSection,document:document}}
+      newObj = {...user.resumeIds,[documentId.id]:{educationSection:educationSection,contactSection:contactSection,document:documentId}}
+      else
+      newObj={[document.id]:{educationSection:educationSection,contactSection:contactSection,document:document}}
       await firestore.collection('users').doc(props.auth.uid).update({
-        resumeIds:newObj
+        resumeIds:{...newObj}
       })
+      console.log(newObj);
     }
        const downloadResume=()=> {
        const input = document.getElementById('resumePreview');
@@ -51,19 +52,23 @@ import html2canvas from 'html2canvas';
       <div className="container full finalize-page" >
       <div className="funnel-section ">
           <div className="finalize "id="resumePreview">
-            <Card className="card" style={{width:"40rem",display:"grid",position:"relative",left:"40rem",top:"3rem" }}>
+            <Card className="card">
             <ResumePreview contactSection={contactSection} educationSection={educationSection} skinCd={props.document.skinCd}></ResumePreview>   
             </Card>
           </div>
-          <div className="finalize-settings center">                    
-              <div className=" download-resume resume-options">
+          <div className="finalize-settings ">                    
+              <div className=" download-resume ">
                
-                    <a  className="button" style={{cursor:'pointer',marginBottom:"14px",position:"relative",top:"-15rem",marginLeft:"14rem" }}   onClick={downloadResume}  >download Resume</a>
+                    <a  className="buttonss" 
+                    // style={{cursor:'pointer',marginBottom:"14px",position:"relative",top:"-15rem",marginLeft:"14rem" }}   onClick={downloadResume} 
+                     >download Resume</a>
              </div>
              <br></br>
-             <div className=" download-resume resume-options">
+             <div className=" download-resume">
                
-                    <a className="button" style={{cursor:'pointer',position:"relative",top:"-15rem",marginLeft:"14rem"}} onClick={saveToDatabase}  >Save to Database</a>
+                    <a className="buttonss" 
+                    // style={{cursor:'pointer',position:"relative",top:"-15rem",marginLeft:"14rem"}} onClick={saveToDatabase} 
+                     >Save to Database</a>
              </div>
     </div>
     </div>

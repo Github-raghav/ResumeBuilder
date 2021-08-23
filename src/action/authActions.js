@@ -16,8 +16,9 @@ export const signInFailed=(error)=>{
 export const registerRequest=()=>{
     return{type:actionTypes.REGISTER_REQUEST}
 }
-export const registerSuccess=()=>{
-    return{type:actionTypes.REGISTER_SUCCESS}
+export const registerSuccess=(users)=>{
+    return{type:actionTypes.REGISTER_SUCCESS,
+    payload:users}
 }
 export const registerFailed=(error)=>{
     return {type:actionTypes.REGISTER_FAILED,
@@ -74,7 +75,7 @@ export const register=(userData)=>{
             dispatch({type: actionTypes.REGISTER_FAILED,error:err})
             setTimeout(()=>{
                 dispatch({type:actionTypes.REMOVE_ERROR})
-            },20000)
+            },2000)
         });
     }
 } 
