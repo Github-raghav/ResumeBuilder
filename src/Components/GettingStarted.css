@@ -1,6 +1,6 @@
 .upperPart{
-    position: relative;
-    top: 77px;
+    /* position: relative;
+    top: 77px; */
     
 }
 .upperPart >h1{
@@ -18,14 +18,30 @@
     text-transform: capitalize;
     font-weight: 600;
     color: #0d1010;
-    
 }
 .lowerPart{
-    height: 30rem;
+    height: 25rem;
     display: flex;
+    align-items: center;
+    flex-direction: row;
+    /* justify-content: flex-end; */
+    /* place-content: flex-end; */
+    /* position: absolute; */
+    /* top: 5px; */
+    place-items: flex-end;
+}
+@media (max-width:1000px){
+  .lowerPart{
+    display: inline-block;
+    align-items: center;
     position: absolute;
-    top: 234px;
-    margin-top: 7px;
+    
+    left: 214px;
+    margin-top: 11px;
+  }
+  .template{
+    margin-bottom: 4px;
+  }
 }
 .template{
     height: 23rem;

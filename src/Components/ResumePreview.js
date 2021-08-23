@@ -1,8 +1,8 @@
-import React from 'react';
-// import {fieldCd} from './../../constants/typeCodes'
+import React, { useState,useEffect } from 'react';
+import "./ResumePreview.css"
 import { fieldCd } from '../constants/typeCodes'
 function ResumePreview(props){
-    // console.log('Resume Preview');
+    
     const rvContact=(key, valToAppend)=>{
         if(props.contactSection){
           return props.contactSection[key]?props.contactSection[key] + (valToAppend?valToAppend:'') :'';
@@ -19,29 +19,33 @@ function ResumePreview(props){
 
         return (
             <div className={props.skinCd + " resume-preview "}>
-                <div className={'name-section'}>
-                    <p className={'center contact-name text-upper' }> {rvContact(fieldCd.FirstName,' ')  + rvContact(fieldCd.LastName)}  </p>
-                    <p className={'center address'}>{rvContact(fieldCd.City,', ') + rvContact(fieldCd.State,', ') +  rvContact(fieldCd.Country,', ') + rvContact(fieldCd.ZipCode,', ')}</p>
-                    <p className={'center'}>{rvContact(fieldCd.Email ) }</p>
-                    <p className={'center'}>{rvContact(fieldCd.Phone) } </p>
+                <div className='name_section'>
+                    <p className="name"  > {rvContact(fieldCd.FirstName,' ')  + rvContact(fieldCd.LastName)}  </p>
+                    <p className=' address'>{rvContact(fieldCd.City,', ') + rvContact(fieldCd.State,', ') +  rvContact(fieldCd.Country,', ') + rvContact(fieldCd.ZipCode,', ')}</p>
+                    <p className='email'>{rvContact(fieldCd.Email ) }</p>
+                    <p className='phone'>{rvContact(fieldCd.Phone) } </p>
                 </div>
 
-                <div className={'profSummSection text-upper'}>                   
-                    <p className="heading bold">PROFESSIONAL SUMMARY</p>
-                     <div className={'divider'}></div>
-                     <p>{rvContact(fieldCd.ProfSummary)}</p>
+                <div className='profSummSection' >                   
+                    <p className="heading">PROFESSIONAL SUMMARY</p>
+                     <p className="prof_details">{rvContact(fieldCd.ProfSummary)}</p>
                 </div>
+                     <br></br>
 
                 <div className={'educationSection text-upper'}>                   
-                    <p className="heading bold">EDUCATIONAL DETAILS</p>
+                    <p className="heading">EDUCATIONAL DETAILS</p>
                      <div className={'divider'}></div>
-                     <p>{rvEducation(fieldCd.SchoolName)}</p>
-                     <p>{rvEducation(fieldCd.Degree)}</p>
-                     <p>{rvEducation(fieldCd.City)}</p>
-                     <p>{rvEducation(fieldCd.State)}</p>
-                     <p>{rvEducation(fieldCd.GraduationCGPA)}</p>
-                     <p>{rvEducation(fieldCd.College)}</p>
-                     <p>{rvEducation(fieldCd.GraduationYear)}</p>
+                     <p className="schl">
+                         <label>School:</label>
+                         {rvEducation(fieldCd.SchoolName)}
+                         </p>
+                         <p className="schCgpa">Class 12th CGPA: { rvEducation(fieldCd.SchoolCGPA)} </p>
+                     <p className="college">College:{rvEducation(fieldCd.College)}</p>
+                     <p className="course">Course:{rvEducation(fieldCd.Degree)}</p>
+                     <p className="Gcgpa">Grad.CGPA: {rvEducation(fieldCd.GraduationCGPA)}</p>
+                     <p className="Gyear">Grad.Year:{rvEducation(fieldCd.GraduationYear)}</p>
+                     <p className="state">State:{rvEducation(fieldCd.State)}</p>
+                     <p className="city">City:{rvEducation(fieldCd.City)}</p>
                 </div>
           
             </div>

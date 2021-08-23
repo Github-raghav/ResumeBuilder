@@ -97,3 +97,20 @@
 .card2{
     height: 32rem;
 }
+@media(max-width:1000px){
+    .view_section{
+        /* width: 10rem; */
+        background-color: aqua;
+        flex-direction: column;
+        display: none;
+    }
+    
+        
+    
+}
+@media screen and (max-width:1000px){
+    .card2{
+        display: none;
+    }
+
+}

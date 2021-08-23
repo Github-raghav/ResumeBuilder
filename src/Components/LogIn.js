@@ -58,7 +58,7 @@ function LogIn(props) {
                             <input type="password" name="password" value={password} onChange={handlePassowrd}/>
                         </div>
                        <div className="error__message">
-                           <h1>erre</h1>
+                        
                         {props.authMine?.ErrorMessage?.message?
                       <div>{props.authMine?.ErrorMessage?.message}</div>:<></>    
                     }

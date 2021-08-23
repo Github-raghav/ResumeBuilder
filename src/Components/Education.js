@@ -7,6 +7,7 @@ import* as educationActions from "../action/educationActions";
 import { useState } from 'react';
 import ResumePreview from './ResumePreview';
 
+
 function Education(props) {
         const[education,setEducation]=useState(props.educationSection);
         const[contact,setContact]=useState(props.contactSection);
@@ -45,7 +46,7 @@ function Education(props) {
             history.push("/final")
         }
     return (
-        <div className="education">
+        <div className="education" style={{position:"absolute",display:"grid",placeItems:"center",top: "150px", left: "61px"}}>
             <section className="contact__section">
                 <Card className="Container">
 
@@ -149,7 +150,7 @@ function Education(props) {
                 </Card>
                 
                 <div className="view_section">
-                <Card className="card2">
+                <Card className="card2" >
               <ResumePreview contactSection={contact} educationSection={education} skinCd={props?.document?.skinCd}></ResumePreview>
                 </Card>
             </div>
